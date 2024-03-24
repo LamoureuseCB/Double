@@ -1,6 +1,9 @@
+import java.math.BigDecimal;
+
 public class IncomeTaxType extends TaxType{
+    private BigDecimal incomeTax = new BigDecimal("0.13");
     @Override
-    public double calculateTaxFor(double amount) {
-        return 0.13;
+    public BigDecimal calculateTaxFor(BigDecimal amount) {
+        return amount.multiply(incomeTax);
     }
 }
